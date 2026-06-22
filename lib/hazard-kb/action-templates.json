@@ -1,0 +1,74 @@
+[
+  {
+    "id": "AT-001",
+    "name": "Flammable Atmosphere Response",
+    "hazardTypes": ["fire_explosion"],
+    "steps": [
+      "Evacuate all personnel from affected zone immediately",
+      "Isolate gas and fuel supply lines to the zone",
+      "Prohibit hot work and ignition sources within 50m",
+      "Ventilate area only if gas concentration is confirmed dropping",
+      "Notify fire response and plant emergency coordinator"
+    ]
+  },
+  {
+    "id": "AT-002",
+    "name": "Mechanical Equipment Shutdown",
+    "hazardTypes": ["mechanical_failure"],
+    "steps": [
+      "Initiate controlled shutdown of affected equipment",
+      "Lock out / tag out energy sources before maintenance re-entry",
+      "Allow cooldown period per equipment procedure",
+      "Inspect bearings, coupling, and lubrication systems",
+      "Document vibration and temperature trend before restart"
+    ]
+  },
+  {
+    "id": "AT-003",
+    "name": "Chemical Exposure Containment",
+    "hazardTypes": ["chemical_exposure"],
+    "steps": [
+      "Evacuate non-essential personnel from zone",
+      "Verify full PPE compliance before any re-entry",
+      "Contain spill or leak source if safe to do so",
+      "Activate decontamination station at zone boundary",
+      "Notify HSE officer and medical standby"
+    ]
+  },
+  {
+    "id": "AT-004",
+    "name": "Electrical Isolation",
+    "hazardTypes": ["electrical"],
+    "steps": [
+      "De-energize affected circuits at source breaker",
+      "Apply lockout/tagout per site electrical safety procedure",
+      "Test for zero energy before work resumes",
+      "Restrict access to arc-flash boundary",
+      "Only qualified electricians may re-energize"
+    ]
+  },
+  {
+    "id": "AT-005",
+    "name": "Confined Space Emergency",
+    "hazardTypes": ["chemical_exposure", "fire_explosion"],
+    "steps": [
+      "Do not enter confined space without attendant and gas monitor",
+      "Continuously monitor O2, LEL, and toxic gas levels",
+      "Activate rescue team — no solo rescue attempts",
+      "Ventilate space per confined space entry permit",
+      "Suspend all hot work in adjacent zones"
+    ]
+  },
+  {
+    "id": "AT-006",
+    "name": "Plant-Wide Evacuation",
+    "hazardTypes": ["fire_explosion", "chemical_exposure"],
+    "steps": [
+      "Sound plant-wide evacuation alarm",
+      "Account for all personnel at muster points",
+      "Shut down non-essential processes per emergency SOP",
+      "Establish exclusion zone until all-clear from incident commander",
+      "Preserve sensor and CCTV logs for investigation"
+    ]
+  }
+]

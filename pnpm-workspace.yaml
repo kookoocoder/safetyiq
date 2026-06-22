@@ -1,0 +1,10 @@
+ignoredBuiltDependencies:
+  - sharp
+
+onlyBuiltDependencies:
+  - canvas
+  - esbuild
+  - ffmpeg-static
+  - msw
+  - onnxruntime-node
+  - protobufjs

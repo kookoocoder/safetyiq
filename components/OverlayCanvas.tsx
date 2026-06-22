@@ -1,0 +1,91 @@
+"use client";
+
+import type React from "react";
+import { useEffect, useRef } from "react";
+import type { CameraSourceRef } from "@/app/lib/camera-source";
+import { drawDetections, syncCanvasSize } from "@/app/lib/draw";
+import type { Detection, DetectionModel } from "@/app/lib/types";
+
+export interface OverlayCanvasProps {
+  readonly webcamRef: React.RefObject<CameraSourceRef | null>;
+  readonly detections: readonly Detection[];
+  readonly frameDimensions: {
+    readonly width: number;
+    readonly height: number;
+  } | null;
+  readonly detectionModel: DetectionModel;
+}
+
+export function OverlayCanvas({
+  webcamRef,
+  detections,
+  frameDimensions,
+  detectionModel,
+}: OverlayCanvasProps): React.JSX.Element {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    if (frameDimensions) {
+      canvas.width = frameDimensions.width;
+      canvas.height = frameDimensions.height;
+      return;
+    }
+
+    const video = webcamRef.current?.video;
+    if (!video) return;
+
+    const syncSize = () => {
+      syncCanvasSize(canvas, video);
+    };
+
+    syncSize();
+    video.addEventListener("loadedmetadata", syncSize);
+    video.addEventListener("resize", syncSize);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", syncSize);
+      video.removeEventListener("resize", syncSize);
+    };
+  }, [frameDimensions, webcamRef]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    if (frameDimensions) {
+      canvas.width = frameDimensions.width;
+      canvas.height = frameDimensions.height;
+    }
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    if (!frameDimensions) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
+
+    drawDetections(ctx, detections, {
+      frameW: frameDimensions.width,
+      frameH: frameDimensions.height,
+      model: detectionModel,
+    });
+  }, [detections, frameDimensions, detectionModel]);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+        width: "100%",
+        height: "100%",
+      }}
+    />
+  );
+}

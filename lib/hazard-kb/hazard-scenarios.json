@@ -1,0 +1,382 @@
+[
+  {
+    "id": "HS-001",
+    "name": "Flammable Atmosphere Ignition",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "Combustible gas concentration exceeds 10% LEL in presence of ignition source",
+    "immediateConsequences": "Flash fire, pressure wave, structural damage, personnel injury or fatality",
+    "contributingFactors": [
+      "hot work in zone",
+      "inadequate ventilation",
+      "gas detector alarm ignored"
+    ],
+    "immediateActions": [
+      "Evacuate all personnel from zone immediately",
+      "Isolate gas supply to affected zone",
+      "Do not operate electrical switches",
+      "Alert fire response team"
+    ],
+    "references": "OSHA 1910.119 — Process Safety Management"
+  },
+  {
+    "id": "HS-002",
+    "name": "Mechanical Overheat Failure",
+    "hazardType": "mechanical_failure",
+    "triggerConditions": "Equipment temperature exceeds design limits during maintenance activity with elevated vibration",
+    "immediateConsequences": "Bearing seizure, fire, burn injury to maintenance personnel",
+    "contributingFactors": [
+      "maintenance work order active",
+      "vibration spike",
+      "inadequate cooldown period"
+    ],
+    "immediateActions": [
+      "Stop all maintenance activity immediately",
+      "Shut down affected equipment",
+      "Allow cooldown before re-approach",
+      "Inspect bearings and coupling"
+    ],
+    "references": "API 610 — Centrifugal Pumps"
+  },
+  {
+    "id": "HS-003",
+    "name": "Chemical Exposure — PPE Non-Compliance",
+    "hazardType": "chemical_exposure",
+    "triggerConditions": "Personnel in chemical handling zone without required PPE during non-nominal pressure conditions",
+    "immediateConsequences": "Chemical burns, inhalation injury, contamination spread",
+    "contributingFactors": [
+      "chemical handling permit active",
+      "pressure exceedance",
+      "missing hard hat or respirator"
+    ],
+    "immediateActions": [
+      "Evacuate personnel from zone",
+      "Verify PPE compliance before re-entry",
+      "Check pressure relief valves",
+      "Notify HSE officer"
+    ],
+    "references": "OSHA 1910.120 — Hazardous Waste Operations"
+  },
+  {
+    "id": "HS-004",
+    "name": "Hot Work in Classified Area",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "Welding or cutting permit active while gas readings exceed warning threshold",
+    "immediateConsequences": "Ignition of accumulated vapors, flash fire, equipment damage",
+    "contributingFactors": [
+      "incomplete gas purge",
+      "wind direction change",
+      "permit not re-validated after sensor alarm"
+    ],
+    "immediateActions": [
+      "Cease all hot work immediately",
+      "Re-test atmosphere before resuming",
+      "Extend gas monitoring perimeter",
+      "Review permit authorization"
+    ],
+    "references": "NFPA 51B — Fire Prevention During Welding"
+  },
+  {
+    "id": "HS-005",
+    "name": "Pressure Vessel Overpressure",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "Process pressure exceeds relief valve setpoint with personnel in blast radius",
+    "immediateConsequences": "Rupture disc activation, projectile hazard, toxic release",
+    "contributingFactors": [
+      "blocked relief path",
+      "runaway reaction",
+      "control valve failure"
+    ],
+    "immediateActions": [
+      "Evacuate blast radius",
+      "Initiate emergency depressurization",
+      "Close upstream isolation valves",
+      "Monitor downstream containment"
+    ],
+    "references": "ASME BPVC Section VIII — Pressure Vessels"
+  },
+  {
+    "id": "HS-006",
+    "name": "Pump Cavitation and Seal Failure",
+    "hazardType": "mechanical_failure",
+    "triggerConditions": "Vibration exceeds alarm threshold with elevated discharge temperature",
+    "immediateConsequences": "Seal leak of process fluid, fire if flammable, environmental release",
+    "contributingFactors": [
+      "low NPSH",
+      "impeller damage",
+      "maintenance during partial load"
+    ],
+    "immediateActions": [
+      "Reduce pump speed or shut down",
+      "Isolate suction and discharge",
+      "Inspect mechanical seal",
+      "Contain any leaked fluid"
+    ],
+    "references": "API 682 — Pumps — Shaft Sealing Systems"
+  },
+  {
+    "id": "HS-007",
+    "name": "Compressor Surge Event",
+    "hazardType": "mechanical_failure",
+    "triggerConditions": "Rapid vibration increase and temperature rise on rotating equipment",
+    "immediateConsequences": "Blade damage, shaft failure, secondary fire from hot surfaces",
+    "contributingFactors": [
+      "anti-surge control disabled",
+      "maintenance bypass active",
+      "load swing during startup"
+    ],
+    "immediateActions": [
+      "Trip compressor per anti-surge logic",
+      "Verify bearing temperatures",
+      "Do not restart until root cause identified",
+      "Inspect discharge piping"
+    ],
+    "references": "API 617 — Axial and Centrifugal Compressors"
+  },
+  {
+    "id": "HS-008",
+    "name": "Toxic Gas Release — Inhalation",
+    "hazardType": "chemical_exposure",
+    "triggerConditions": "Toxic concentration detected with open chemical handling permit",
+    "immediateConsequences": "Acute inhalation injury, unconsciousness, fatality at high doses",
+    "contributingFactors": [
+      "scrubber offline",
+      "inadequate respiratory protection",
+      "wind still conditions"
+    ],
+    "immediateActions": [
+      "Evacuate upwind",
+      "Don SCBA before entry",
+      "Activate emergency scrubber",
+      "Establish hot zone boundary"
+    ],
+    "references": "OSHA 1910.134 — Respiratory Protection"
+  },
+  {
+    "id": "HS-009",
+    "name": "Corrosive Spill During Transfer",
+    "hazardType": "chemical_exposure",
+    "triggerConditions": "Pressure spike during chemical transfer with personnel in transfer zone",
+    "immediateConsequences": "Chemical burns, equipment corrosion, environmental contamination",
+    "contributingFactors": [
+      "hose failure",
+      "overpressure during pumping",
+      "missing drip tray"
+    ],
+    "immediateActions": [
+      "Stop transfer pumps",
+      "Neutralize spill per SDS",
+      "Decontaminate affected personnel",
+      "Report to environmental compliance"
+    ],
+    "references": "EPA SPCC — Spill Prevention Control"
+  },
+  {
+    "id": "HS-010",
+    "name": "Arc Flash During Live Work",
+    "hazardType": "electrical",
+    "triggerConditions": "Electrical work permit active with abnormal load or fault indicators",
+    "immediateConsequences": "Severe burns, cardiac arrest, equipment destruction",
+    "contributingFactors": [
+      "inadequate arc flash boundary",
+      "wrong PPE category",
+      "energized work without justification"
+    ],
+    "immediateActions": [
+      "De-energize if safe",
+      "Apply LOTO",
+      "Call qualified electrician",
+      "Treat burns and initiate medical response"
+    ],
+    "references": "NFPA 70E — Electrical Safety in the Workplace"
+  },
+  {
+    "id": "HS-011",
+    "name": "Hydrogen Accumulation in Enclosed Space",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "LEL rising in confined area with ignition-capable equipment nearby",
+    "immediateConsequences": "Detonation in enclosed volume, structural collapse",
+    "contributingFactors": [
+      "inadequate forced ventilation",
+      "battery charging in confined space",
+      "blocked exhaust"
+    ],
+    "immediateActions": [
+      "Evacuate and ventilate",
+      "Remove ignition sources",
+      "Continuous gas monitoring",
+      "No re-entry until LEL below 10%"
+    ],
+    "references": "OSHA 1910.146 — Permit-Required Confined Spaces"
+  },
+  {
+    "id": "HS-012",
+    "name": "Runaway Exothermic Reaction",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "Temperature and pressure rising simultaneously in reactor zone",
+    "immediateConsequences": "Reactor rupture, toxic plume, multi-casualty event",
+    "contributingFactors": [
+      "cooling failure",
+      "wrong feed ratio",
+      "blocked vent"
+    ],
+    "immediateActions": [
+      "Initiate emergency quench",
+      "Depressurize via relief system",
+      "Evacuate downwind",
+      "Activate emergency response plan"
+    ],
+    "references": "CCPS — Guidelines for Chemical Process Quantitative Risk Analysis"
+  },
+  {
+    "id": "HS-013",
+    "name": "Bearing Failure on Critical Rotating Asset",
+    "hazardType": "mechanical_failure",
+    "triggerConditions": "High-frequency vibration with temperature rise on motor-driven equipment",
+    "immediateConsequences": "Shaft whip, coupling failure, fire from friction heat",
+    "contributingFactors": [
+      "missed lubrication",
+      "misalignment after maintenance",
+      "overload condition"
+    ],
+    "immediateActions": [
+      "Emergency stop",
+      "Allow coast-down",
+      "Inspect coupling and foundation bolts",
+      "Replace bearing set before restart"
+    ],
+    "references": "ISO 10816 — Mechanical vibration evaluation"
+  },
+  {
+    "id": "HS-014",
+    "name": "Steam Line Rupture",
+    "hazardType": "mechanical_failure",
+    "triggerConditions": "Abnormal vibration on steam header with maintenance activity nearby",
+    "immediateConsequences": "Scalding steam release, visibility loss, burns",
+    "contributingFactors": [
+      "water hammer",
+      "corrosion under insulation",
+      "improper warm-up"
+    ],
+    "immediateActions": [
+      "Isolate steam supply",
+      "Evacuate wet zone",
+      "Allow line to depressurize",
+      "Inspect for erosion and wall thinning"
+    ],
+    "references": "ASME B31.1 — Power Piping"
+  },
+  {
+    "id": "HS-015",
+    "name": "LOTO Violation During Maintenance",
+    "hazardType": "mechanical_failure",
+    "triggerConditions": "Equipment energizes while maintenance permit active and personnel present",
+    "immediateConsequences": "Crush injury, electrocution, amputation",
+    "contributingFactors": [
+      "incomplete LOTO",
+      "shift handover gap",
+      "stored energy not released"
+    ],
+    "immediateActions": [
+      "Emergency stop all affected equipment",
+      "Verify zero energy state",
+      "Account for all maintenance personnel",
+      "Audit LOTO procedure compliance"
+    ],
+    "references": "OSHA 1910.147 — Control of Hazardous Energy"
+  },
+  {
+    "id": "HS-016",
+    "name": "Flammable Liquid Pool Fire",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "Flammable liquid release with active hot work in same zone",
+    "immediateConsequences": "Pool fire spreading to adjacent equipment, smoke inhalation",
+    "contributingFactors": [
+      "inadequate bund capacity",
+      "static discharge",
+      "delayed spill response"
+    ],
+    "immediateActions": [
+      "Activate fixed fire suppression",
+      "Evacuate and fight from safe distance",
+      "Cool adjacent vessels",
+      "Deploy foam if trained team available"
+    ],
+    "references": "NFPA 30 — Flammable and Combustible Liquids Code"
+  },
+  {
+    "id": "HS-017",
+    "name": "Oxygen-Enriched Atmosphere",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "O2 enrichment detected near welding or cutting activity",
+    "immediateConsequences": "Materials ignite at lower temperatures, accelerated fire spread",
+    "contributingFactors": [
+      "oxygen leak from cylinder storage",
+      "incompatible materials in O2 service",
+      "poor housekeeping"
+    ],
+    "immediateActions": [
+      "Stop all ignition sources",
+      "Ventilate to reduce O2 below 23.5%",
+      "Remove hydrocarbon materials from zone",
+      "Inspect O2 distribution system"
+    ],
+    "references": "CGA P-36 — Safe Hydrogen and Oxygen Systems"
+  },
+  {
+    "id": "HS-018",
+    "name": "Confined Space O2 Deficiency",
+    "hazardType": "chemical_exposure",
+    "triggerConditions": "Personnel entry during confined space permit with abnormal gas readings",
+    "immediateConsequences": "Asphyxiation, unconsciousness within minutes",
+    "contributingFactors": [
+      "inert gas purge incomplete",
+      "rust consumption of oxygen",
+      "no continuous monitoring"
+    ],
+    "immediateActions": [
+      "Do not enter — retrieve via retrieval system only",
+      "Ventilate with forced air",
+      "Continuous four-gas monitoring",
+      "Standby rescue team at entry"
+    ],
+    "references": "OSHA 1910.146 — Permit-Required Confined Spaces"
+  },
+  {
+    "id": "HS-019",
+    "name": "Dust Explosion in Processing Area",
+    "hazardType": "fire_explosion",
+    "triggerConditions": "Elevated particulate with ignition source in enclosed processing zone",
+    "immediateConsequences": "Primary and secondary dust explosions, structural damage",
+    "contributingFactors": [
+      "accumulated dust on surfaces",
+      "open flame or spark",
+      "inadequate housekeeping"
+    ],
+    "immediateActions": [
+      "Shutdown dust collection safely",
+      "Evacuate and suppress secondary explosion risk",
+      "No sweeping — use approved vacuum",
+      "Inspect explosion vent panels"
+    ],
+    "references": "NFPA 652 — Fundamentals of Combustible Dust"
+  },
+  {
+    "id": "HS-020",
+    "name": "Simultaneous Operations (SIMOPS) Conflict",
+    "hazardType": "chemical_exposure",
+    "triggerConditions": "Multiple active permits in adjacent zones with cross-zone sensor alarms",
+    "immediateConsequences": "Uncontrolled interaction between incompatible activities",
+    "contributingFactors": [
+      "permit board not coordinated",
+      "shared ventilation system",
+      "insufficient barrier between zones"
+    ],
+    "immediateActions": [
+      "Pause lower-priority permit activities",
+      "Re-assess SIMOPS matrix",
+      "Increase monitoring frequency",
+      "Brief all permit holders on cross-zone risk"
+    ],
+    "references": "IOGP Report 423 — Simultaneous Operations"
+  }
+]

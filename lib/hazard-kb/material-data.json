@@ -1,0 +1,18 @@
+{
+  "materials": [
+    {
+      "id": "MAT-001",
+      "name": "Natural Gas / Methane",
+      "lelPercent": 5.0,
+      "uelPercent": 15.0,
+      "notes": "LEL at 5% volume in air; ignition sources prohibited above 10% LEL"
+    },
+    {
+      "id": "MAT-002",
+      "name": "Industrial Process Pressure Vessel",
+      "nominalBar": 4.0,
+      "maxSafeBar": 8.5,
+      "notes": "Pressure relief at 10 bar"
+    }
+  ]
+}

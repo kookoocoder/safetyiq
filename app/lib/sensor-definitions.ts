@@ -1,0 +1,78 @@
+import type { SensorDefinition } from "@/app/lib/sensor-types";
+
+export const SENSOR_DEFINITIONS: SensorDefinition[] = [
+  {
+    id: "GAS-Z3",
+    name: "Combustible Gas",
+    zoneId: "zone-3",
+    unit: "ppm",
+    nominalMin: 0,
+    nominalMax: 10,
+    warningThreshold: 25,
+    criticalThreshold: 70,
+  },
+  {
+    id: "GAS-Z1",
+    name: "Combustible Gas",
+    zoneId: "zone-1",
+    unit: "ppm",
+    nominalMin: 0,
+    nominalMax: 10,
+    warningThreshold: 25,
+    criticalThreshold: 70,
+  },
+  {
+    id: "TEMP-U2",
+    name: "Unit 2 Temperature",
+    zoneId: "zone-2",
+    unit: "celsius",
+    nominalMin: 40,
+    nominalMax: 75,
+    warningThreshold: 85,
+    criticalThreshold: 95,
+  },
+  {
+    id: "TEMP-Z3",
+    name: "Zone 3 Ambient Temp",
+    zoneId: "zone-3",
+    unit: "celsius",
+    nominalMin: 20,
+    nominalMax: 35,
+    warningThreshold: 45,
+    criticalThreshold: 60,
+  },
+  {
+    id: "PRES-Z1",
+    name: "Zone 1 Pressure",
+    zoneId: "zone-1",
+    unit: "bar",
+    nominalMin: 2,
+    nominalMax: 6,
+    warningThreshold: 8.5,
+    criticalThreshold: 10,
+  },
+  {
+    id: "VIB-U2",
+    name: "Unit 2 Vibration",
+    zoneId: "zone-2",
+    unit: "g",
+    nominalMin: 0,
+    nominalMax: 2,
+    warningThreshold: 4.5,
+    criticalThreshold: 6,
+  },
+  {
+    id: "VIB-U4",
+    name: "Unit 4 Vibration",
+    zoneId: "zone-4",
+    unit: "g",
+    nominalMin: 0,
+    nominalMax: 2,
+    warningThreshold: 4.5,
+    criticalThreshold: 6,
+  },
+];
+
+export const SENSOR_DEFINITION_MAP = new Map(
+  SENSOR_DEFINITIONS.map((d) => [d.id, d]),
+);

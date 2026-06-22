@@ -1,0 +1,360 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   THEME: SafetyIQ Light — clean minimal industrial SaaS
+   Fonts: IBM Plex Sans (UI), IBM Plex Mono (data/labels)
+   Convention: shadcn tokens + legacy --op-* / --md-* remaps
+   ============================================================ */
+
+@theme inline {
+  /* --- Fonts --- */
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+  --font-heading: var(--font-ibm-plex-sans);
+  --font-headline: var(--font-ibm-plex-sans);
+  --font-body: var(--font-ibm-plex-sans);
+  --font-label: var(--font-ibm-plex-mono);
+
+  /* --- shadcn core tokens --- */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* --- Border radius (soft, modern) --- */
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 10px);
+  --radius-3xl: calc(var(--radius) + 14px);
+  --radius-4xl: calc(var(--radius) + 18px);
+
+  /* --- Legacy op-* palette (light remaps) --- */
+  --color-op-base: var(--op-base);
+  --color-op-surface: var(--op-surface);
+  --color-op-elevated: var(--op-elevated);
+  --color-op-silver: var(--op-silver);
+  --color-op-border: var(--op-border);
+  --color-op-border-active: var(--op-border-active);
+  --color-op-text-primary: var(--op-text-primary);
+  --color-op-text-sec: var(--op-text-sec);
+  --color-op-text-muted: var(--op-text-muted);
+  --color-op-critical: var(--op-critical);
+  --color-op-warning: var(--op-warning);
+  --color-op-nominal: var(--op-nominal);
+
+  /* --- Material Design 3 surface scale (light remaps) --- */
+  --color-surface: var(--md-surface);
+  --color-surface-dim: var(--md-surface-dim);
+  --color-surface-bright: var(--md-surface-bright);
+  --color-surface-variant: var(--md-surface-variant);
+  --color-surface-tint: var(--md-surface-tint);
+  --color-surface-container: var(--md-surface-container);
+  --color-surface-container-low: var(--md-surface-container-low);
+  --color-surface-container-high: var(--md-surface-container-high);
+  --color-surface-container-lowest: var(--md-surface-container-lowest);
+  --color-surface-container-highest: var(--md-surface-container-highest);
+  --color-inverse-surface: var(--md-inverse-surface);
+  --color-inverse-on-surface: var(--md-inverse-on-surface);
+
+  /* --- Material Design 3 on-colors --- */
+  --color-on-background: var(--md-on-background);
+  --color-on-surface: var(--md-on-surface);
+  --color-on-surface-variant: var(--md-on-surface-variant);
+
+  /* --- Material Design 3 primary scale --- */
+  --color-on-primary: var(--md-on-primary);
+  --color-primary-container: var(--md-primary-container);
+  --color-on-primary-container: var(--md-on-primary-container);
+  --color-primary-fixed: var(--md-primary-fixed);
+  --color-primary-fixed-dim: var(--md-primary-fixed-dim);
+  --color-on-primary-fixed: var(--md-on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--md-on-primary-fixed-variant);
+  --color-inverse-primary: var(--md-inverse-primary);
+
+  /* --- Material Design 3 secondary scale --- */
+  --color-on-secondary: var(--md-on-secondary);
+  --color-secondary-container: var(--md-secondary-container);
+  --color-on-secondary-container: var(--md-on-secondary-container);
+  --color-secondary-fixed: var(--md-secondary-fixed);
+  --color-secondary-fixed-dim: var(--md-secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--md-on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--md-on-secondary-fixed-variant);
+
+  /* --- Material Design 3 tertiary scale --- */
+  --color-tertiary: var(--md-tertiary);
+  --color-on-tertiary: var(--md-on-tertiary);
+  --color-tertiary-container: var(--md-tertiary-container);
+  --color-on-tertiary-container: var(--md-on-tertiary-container);
+  --color-tertiary-fixed: var(--md-tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--md-tertiary-fixed-dim);
+  --color-on-tertiary-fixed: var(--md-on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--md-on-tertiary-fixed-variant);
+
+  /* --- Material Design 3 error scale --- */
+  --color-on-error: var(--md-on-error);
+  --color-error-container: var(--md-error-container);
+  --color-on-error-container: var(--md-on-error-container);
+
+  /* --- Material Design 3 outline --- */
+  --color-outline: var(--md-outline);
+  --color-outline-variant: var(--md-outline-variant);
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — LIGHT (default)
+   ============================================================ */
+
+:root {
+  /* === Legacy op-* (remapped to light) === */
+  --op-base: #f8f9fb; /* Page / canvas background */
+  --op-surface: #ffffff; /* Cards, nav, panels */
+  --op-elevated: #f4f4f5; /* Elevated / hover / header strips */
+  --op-silver: #18181b; /* Primary accent / ink (was silver highlight) */
+  --op-border: #e4e4e7; /* Default border */
+  --op-border-active: #a1a1aa; /* Hover / focus border */
+  --op-text-primary: #18181b; /* Primary body text */
+  --op-text-sec: #71717a; /* Secondary text */
+  --op-text-muted: #a1a1aa; /* Placeholders / metadata */
+  --op-critical: #dc2626; /* Critical / error */
+  --op-warning: #d97706; /* Warning amber */
+  --op-nominal: #16a34a; /* Nominal / success */
+
+  /* === SafetyIQ Risk & Plant Map === */
+  --risk-nominal: #16a34a;
+  --risk-warning: #ca8a04;
+  --risk-high: #ea580c;
+  --risk-critical: #dc2626;
+  --gauge-nominal: #16a34a;
+  --gauge-warning: #ca8a04;
+  --gauge-critical: #dc2626;
+  --gauge-track: #e4e4e7;
+  --map-bg: #f8fafc;
+  --map-grid: #e2e8f0;
+  --map-border: #cbd5e1;
+
+  /* === Material Design 3 — Primary (neutral ink) === */
+  --md-primary: #18181b;
+  --md-on-primary: #fafafa;
+  --md-primary-container: #e4e4e7;
+  --md-on-primary-container: #18181b;
+  --md-primary-fixed: #d4d4d8;
+  --md-primary-fixed-dim: #a1a1aa;
+  --md-on-primary-fixed: #18181b;
+  --md-on-primary-fixed-variant: #3f3f46;
+  --md-inverse-primary: #fafafa;
+
+  /* === Material Design 3 — Secondary === */
+  --md-secondary: #71717a;
+  --md-on-secondary: #fafafa;
+  --md-secondary-container: #f4f4f5;
+  --md-on-secondary-container: #3f3f46;
+  --md-secondary-fixed: #e4e4e7;
+  --md-secondary-fixed-dim: #d4d4d8;
+  --md-on-secondary-fixed: #18181b;
+  --md-on-secondary-fixed-variant: #52525b;
+
+  /* === Material Design 3 — Tertiary (risk red accent) === */
+  --md-tertiary: #b91c1c;
+  --md-on-tertiary: #fef2f2;
+  --md-tertiary-container: #fee2e2;
+  --md-on-tertiary-container: #7f1d1d;
+  --md-tertiary-fixed: #fecaca;
+  --md-tertiary-fixed-dim: #f87171;
+  --md-on-tertiary-fixed: #450a0a;
+  --md-on-tertiary-fixed-variant: #991b1b;
+
+  /* === Material Design 3 — Error === */
+  --md-error: #dc2626;
+  --md-on-error: #fef2f2;
+  --md-error-container: #fee2e2;
+  --md-on-error-container: #7f1d1d;
+
+  /* === Material Design 3 — Background & Surface scale === */
+  --md-on-background: #18181b;
+  --md-on-surface: #18181b;
+  --md-on-surface-variant: #71717a;
+  --md-surface: #ffffff;
+  --md-surface-dim: #f4f4f5;
+  --md-surface-bright: #ffffff;
+  --md-surface-variant: #f4f4f5;
+  --md-surface-tint: #18181b;
+  --md-surface-container: #ffffff;
+  --md-surface-container-low: #fafafa;
+  --md-surface-container-high: #f4f4f5;
+  --md-surface-container-lowest: #ffffff;
+  --md-surface-container-highest: #e4e4e7;
+  --md-inverse-surface: #18181b;
+  --md-inverse-on-surface: #fafafa;
+
+  /* === Material Design 3 — Outline === */
+  --md-outline: #d4d4d8;
+  --md-outline-variant: #e4e4e7;
+
+  /* === shadcn Tokens (light) === */
+  --background: oklch(0.995 0.002 260);
+  --foreground: oklch(0.18 0.01 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 260);
+  --primary: oklch(0.205 0.01 260);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.965 0.005 260);
+  --secondary-foreground: oklch(0.205 0.01 260);
+  --muted: oklch(0.965 0.005 260);
+  --muted-foreground: oklch(0.5 0.015 260);
+  --accent: oklch(0.965 0.005 260);
+  --accent-foreground: oklch(0.205 0.01 260);
+  --destructive: oklch(0.55 0.22 25);
+  --border: oklch(0.91 0.005 260);
+  --input: oklch(0.91 0.005 260);
+  --ring: oklch(0.205 0.01 260);
+  --radius: 0.375rem;
+
+  /* Charts */
+  --chart-1: oklch(0.55 0.16 155);
+  --chart-2: oklch(0.55 0.22 25);
+  --chart-3: oklch(0.7 0.16 75);
+  --chart-4: oklch(0.65 0.18 45);
+  --chart-5: oklch(0.55 0.02 260);
+
+  /* Sidebar */
+  --sidebar: oklch(0.995 0.002 260);
+  --sidebar-foreground: oklch(0.18 0.01 260);
+  --sidebar-primary: oklch(0.205 0.01 260);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.965 0.005 260);
+  --sidebar-accent-foreground: oklch(0.205 0.01 260);
+  --sidebar-border: oklch(0.91 0.005 260);
+  --sidebar-ring: oklch(0.205 0.01 260);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+  }
+
+  /* Thin, on-brand scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--op-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--op-border-active);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--op-text-muted);
+  }
+
+  /* Material Symbols base settings */
+  .material-symbols-outlined {
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 300,
+      "GRAD" 0,
+      "opsz" 24;
+    font-size: 20px;
+    line-height: 1;
+    display: inline-block;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  /* Face enrollment registry — confidence strip */
+  .confidence-gauge {
+    height: 2px;
+    width: 100%;
+    position: relative;
+    background: var(--op-border);
+  }
+
+  .confidence-fill {
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--op-silver);
+  }
+
+  /* Risk semantics — light-mode tinted badges */
+  .risk-badge-nominal {
+    background: oklch(0.96 0.04 155);
+    color: oklch(0.42 0.12 155);
+    border: 1px solid oklch(0.88 0.06 155);
+  }
+
+  .risk-badge-warning {
+    background: oklch(0.97 0.04 95);
+    color: oklch(0.48 0.12 75);
+    border: 1px solid oklch(0.9 0.08 90);
+  }
+
+  .risk-badge-high {
+    background: oklch(0.97 0.04 55);
+    color: oklch(0.5 0.16 45);
+    border: 1px solid oklch(0.9 0.08 50);
+  }
+
+  .risk-badge-critical {
+    background: oklch(0.97 0.02 25);
+    color: oklch(0.5 0.2 25);
+    border: 1px solid oklch(0.9 0.05 25);
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
